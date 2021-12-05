@@ -1,0 +1,38 @@
+.stack {
+    width: 286px;
+    height: 419px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+  }
+
+  .round {
+    box-sizing: border-box;
+    width: 100%;
+    flex-shrink: 0;
+    height: 50px;
+    background-color: var(--token-278c066a-bbc4-441a-ae68-a6d2d9967f52, #1a1a1a);
+    overflow: visible;
+    border-radius: 40px;
+    border: 1px solid #222;
+    padding:5px;
+    color:white;
+    margin:10px;
+    outline: none;
+
+  }
+
+  .button {
+    width: 71%;
+    flex-shrink: 0;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--token-c8953278-7b03-4177-a0fa-f3cda39afd50, #00dd88);
+    overflow: visible;
+    border-radius: 50px;
+  }

@@ -1,32 +1,30 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
-import Dashboard from './components/Dashboard';
-import Login from './components/Login';
-import Preferences from './components/Preferences';
-import useToken from './components/useToken';
+import {React,useState} from 'react';
+ 
+import './App.css'
+  import useToken from './components/useToken';
+import Login from './components/users/Login';
+
+import Gust from './components/Gust'
+import Tabs from './components/Tabs'
+import UserTab from './components/Tabs/User/User'
 
 function App() {
-
+const [tab,setTab]=useState(UserTab)
   const { token, setToken } = useToken();
 
+ 
   if(!token) {
-    return <Login setToken={setToken} />
+    return <Gust setToken={setToken} />
   }
 
   return (
     <div className="wrapper">
+      
+      <Tabs setTab={setTab} />
       <h1>Application</h1>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/preferences">
-            <Preferences />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+
+      {tab}
+     
     </div>
   );
 }
